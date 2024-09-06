@@ -1,0 +1,30 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "plugins": ["prettier"],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+        "prettier/prettier": [  //or whatever plugin that is causing the clash
+            "error",
+            {
+                "endOfLine": "auto",
+                "tabWidth":4
+            }
+        ],
+        "no-unused-vars": 0,
+        "@typescript-eslint/no-explicit-any": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": ["node_modules", "src"]
+            }
+        }
+    }
+}
